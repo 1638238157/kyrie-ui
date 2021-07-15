@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/1638238157/kyrie-ui/issues"
   },
-  "homepage": "https://github.com/1638238157/kyrie-ui#readme"
+  "homepage": "https://github.com/1638238157/kyrie-ui#readme",
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
 }

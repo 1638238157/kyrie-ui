@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/1638238157/kyrie-ui#readme",
   "dependencies": {
+    "parcel-bundler": "^1.9.2",
     "vue": "^2.5.16"
   }
 }

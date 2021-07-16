@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1638238157/kyrie-ui.git"
+    "url": "git+https://github.com/kyrie-ui/kyrie-ui.git"
   },
   "author": "chenhaoran",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/1638238157/kyrie-ui/issues"
+    "url": "https://github.com/kyrie-ui/kyrie-ui/issues"
   },
-  "homepage": "https://github.com/1638238157/kyrie-ui#readme",
+  "homepage": "https://github.com/kyrie-ui/kyrie-ui#readme",
   "dependencies": {
     "vue": "^2.5.16",
     "vue-hot-reload-api": "^2.3.4"

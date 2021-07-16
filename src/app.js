@@ -107,6 +107,6 @@ try {
   window.errors = [error]
 } finally {
     window.errors && window.errors.forEach((error) => {
-    console.error(error.message)
+    // console.error(error.message)
   })
 }

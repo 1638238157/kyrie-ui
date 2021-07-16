@@ -1,6 +1,17 @@
 const puppeteer = require('puppeteer');
+const p = require('path');
+var static = require('node-static');
+var file = new static.Server('./dist');
+var port = process.env.PORT || 8080
 
-(async () => {
+var server = require('http').createServer(function (request, response) {
+    request.addListener('end', function () {
+        file.serve(request, response);
+    }).resume();
+})
+
+!(async () => {
+  server.listen(port);
   const browser = await puppeteer.launch({headless: false})
   const page = await browser.newPage()
   await page.setRequestInterception(true);
@@ -15,7 +26,9 @@ const puppeteer = require('puppeteer');
     const errors = await page.evaluate(() => {
       return window.errors || []
     })
-    if (errors.length === 0) {
+    if(errors === undefined){
+      console.log('没要找到测试用例')
+    }else if (errors.length === 0) {
       console.info('没有错误')
     } else {
       console.error('有错误')
@@ -24,6 +37,9 @@ const puppeteer = require('puppeteer');
       })
     }
     await browser.close()
+    server.close()
   });
-  await page.goto('http://127.0.0.1:1234')
+
+  await page.goto(`http://127.0.0.1:${port}`)
+
 })()
